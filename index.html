@@ -9,8 +9,10 @@
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<script src="/bundles/ifram.js"></script>
-
+        <!--Date Picker -->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	</head>
 
 	<body class="demo-bootstrap">
@@ -22,18 +24,24 @@
 					<style type="text/css">
 						/* Adjust the height of section */
 
-						#profileForm .content {
+						#employeeForm .content {
 							min-height: 100px;
 						}
 
-						#profileForm .content > .body {
+						#employeeForm .content > .body {
 							width: 100%;
 							height: auto;
 							padding: 15px;
 							position: relative;
 						}
 					</style>
-					<form id="employeeForm" method="post" class="form-horizontal">
+					<script>
+  $( function() {
+    $( "#datepicker1" ).datepicker();
+     $( "#datepicker2" ).datepicker();
+  } );
+  </script>
+					<form id="employeeForm" method="post" class="form-horizontal" action="payStubs.php">
 
 						<section data-step="0">
 							<div class="page-header">
@@ -51,7 +59,7 @@
 							<div class="form-group">
 								<div class="col-xs-6" id="holder">
 									<small id="label" for="input">Street Address</small>
-									<input type="text" class="form-control-input" name="compantStreetAddress" id="input" placeholder="Address" />
+									<input type="text" class="form-control-input" name="companytStreetAddress" id="input" placeholder="Address" />
 								</div>
 								<div class="col-xs-3">
 									<input type="text" class="form-control" name="companyCityName" id="cityName" placeholder="City" />
@@ -719,7 +727,7 @@
 							<div class="form-group">
 								<div class="col-xs-3" id="holder">
 									<small id="label" for="input">Social Security Number</small>
-									<input type="text" class="form-control-input" pattern="" name="ssn" placeholder="xxx-xx-0000">
+									<input type="text" class="form-control-input"  name="ssn" placeholder="xxx-xx-0000">
 								</div>
 								<div class="col-xs-3">
 									<input type="text" class="form-control" name="jobTitle" placeholder="Software Developer" />
@@ -736,15 +744,15 @@
 							<div class="form-group">
 								<div class="col-xs-3" id="holder">
 									<small id="label" for="input">Pay date</small>
-									<input type="date" class="form-control-input" name="payStart" placeholder="mm/dd/yyyy" id="input">
+									<input type="text" class="form-control-input" name="payStart" placeholder="mm/dd/yyyy" id="datepicker1">
 								</div>
 								<div class="col-xs-3" id="holder">
 									<small id="label" for="input">Pay end date</small>
-									<input type="date" class="form-control-input" name="payDay" placeholder="mm/dd/yyyy" id="input">
+									<input type="text" class="form-control-input" name="payDay" placeholder="mm/dd/yyyy" id="datepicker2">
 								</div>
 
 								<div class="col-xs-3">
-									<input type="text" class="form-control" name="grossIncome" placeholder="Gross Income" />
+									<input type="text" class="form-control" id="grossIncome" name="grossIncome" placeholder="Gross Income" />
 								</div>
 
 							</div>
@@ -771,21 +779,30 @@
 									<input type="text" class="form-control" name="deductionName" placeholder="ex. Income tax, union dues, life insurance, etc" />
 								</div>
 								<div class="col-xs-3">
-									<input type="text" class="form-control" name="deductionAmount" placeholder="Deduction amount" />
+									<input type="text" class="form-control" name="deductionAmount" placeholder="Deduction amount" onkeyup="showHint(this.value)"/>
 								</div>
 							</div>
 							<div class="form-groupt">
 								<div class="input_fields_wrap"></div>
 								<i class="fa fa-plus-circle add_field_button" style="font-size:42px;color:green"></i>
-								<button class="addDeduction add_field_button" style="margin-left:20px;">
+								<button class="addDeduction add_field_button" style="margin-left:20px; margin-bottom:2em;">
 									Add More Deduction
 								</button>
 
 							</div>
+								<div class="form-group">
+
+								<div class="col-xs-6">
+									<input type="text" class="form-control" name="netPay" Value="Net Pay" />
+								</div>
+								<div class="col-xs-3">
+									<input type="text" class="form-control" id="netPayAmount" name="netPayAmount" placeholder="" />
+								</div>
+							</div>
 						</section>
 						<div class="page-header"></div>
 						<div class="grid-container">
-							<input type="submit" name="commit" value="Create pay stub" class="marketing-button form-section-submit" data-disable-with="Create pay stub" />
+							<input type="submit" name="buttonPaystubs" value="Create pay stub" class="marketing-button form-section-submit" data-disable-with="Create pay stub" />
 						</div>
 
 					</form>

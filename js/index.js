@@ -16,3 +16,9 @@ $(document).ready(function() {
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
 });
+
+function showHint(str) {
+   var grossIncome= document.getElementById("grossIncome").value;
+    $('#netPayAmount').val(grossIncome-str);
+     $("#netPayAmount").css("background-color","#c4ad2b");
+}
