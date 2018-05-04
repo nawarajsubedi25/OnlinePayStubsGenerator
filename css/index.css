@@ -1,0 +1,109 @@
+.form-control{
+     display: inline-block; 
+     height: 52px; 
+    width: 100%;
+    margin: 0 0 15px;
+    padding: 1.0625em 2em;
+     color: #30373b; 
+    font-family: ShopifySans, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    -webkit-box-shadow: 0 0 0 1px #c4cdd5;
+    box-shadow: 0 0 0 1px #c4cdd5;
+    border: 0;
+    border-radius: 5px;
+    background-color: #ffffff;
+    -webkit-transition: all 150ms;
+    transition: all 150ms;
+    -moz-appearance: none;
+    appearance: none;
+}
+input:focus{
+    border: 2px solid green;
+    background-color: #edf0f5;
+}
+
+#label {
+    margin-bottom: -50px;
+    padding-left: 20px;
+    padding-top: 2px;
+    position: absolute;
+    color: bold;
+}
+.form-control-input{
+     display: inline-block; 
+     height: 52px; 
+    width: 100%;
+    margin: 0 0 15px;
+    padding: 3em 2em 0em 2em;
+    padding-top:1em;
+     color: #30373b; 
+    font-family: ShopifySans, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    -webkit-box-shadow: 0 0 0 1px #c4cdd5;
+    box-shadow: 0 0 0 1px #c4cdd5;
+    border: 0;
+    border-radius: 5px;
+    background-color: #ffffff;
+    -webkit-transition: all 150ms;
+    transition: all 150ms;
+    -moz-appearance: none;
+    appearance: none;
+}
+.addDeduction{
+    position: relative;
+  top: -8px;
+   background:none!important;
+     border:none; 
+     padding:0!important;
+    
+    /*optional*/
+    font-family:arial,sans-serif; /*input has OS specific font-family*/
+     color:#069;
+     text-decoration:underline;
+     cursor:pointer;
+}
+.marketing-button {
+    -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
+    background-color: #5c6ac4;
+    color: #ffffff;
+    border-width: 0;
+    border-style: solid;
+    border-color: transparent;
+    display: inline-block;
+    padding: 1.0625em 1.875em;
+    border-width: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: 5px;
+    color: #ffffff;
+    font-family: ShopifySans, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    line-height: 1.133;
+    -webkit-font-smoothing: antialiased;
+    -webkit-transition: 150ms ease;
+    transition: 150ms ease;
+    -webkit-transition-property: background-color border-color color;
+    transition-property: background-color border-color color;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+.marketing-button:hover {
+    background-color: #31366f;
+    color: white;
+      box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+@media screen and (min-width: 46.875em)
+{
+    .form-section-submit {
+    float: right;
+}
+}
