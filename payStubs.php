@@ -3,24 +3,24 @@
 			<?php 
     	if (isset($_POST["buttonPaystubs"]))
 {
-	 $companyName    = $_POST['companyName'];
+	 $companyName    = strtoupper($_POST['companyName']);
 	 $companyStreetAddress=$_POST["companytStreetAddress"];
-	 $companyCityName=$_POST["companyCityName"];
+	 $companyCityName=ucwords($_POST["companyCityName"]);
 	 $companyStateName=$_POST["companyStateName"];
 	 $companyZipcode=$_POST["companyZipCode"];
 	 $companyCountryName=$_POST["companyCountryName"];
 	 $einNumber=$_POST["einNumber"];
 	 
-	 $firstName=$_POST["firstName"];
-	 $lastName=$_POST["lastName"];
-	 $middleName=$_POST["middleName"];
-	 $streetAddress=$_POST["streetAddress"];
-	 $cityName=$_POST["cityName"];
+	 $firstName=ucwords($_POST["firstName"]);
+	 $lastName=ucwords($_POST["lastName"]);
+	 $middleName=ucwords($_POST["middleName"]);
+	 $streetAddress=ucwords($_POST["streetAddress"]);
+	 $cityName=ucwords($_POST["cityName"]);
 	 $stateName=$_POST["stateName"];
 	 $zipCode=$_POST["zipCode"];
 	 $countryName=$_POST["countryName"];
 	 $ssn=$_POST["ssn"];
-	 $jobTitle=$_POST["jobTitle"];
+	 $jobTitle=ucwords($_POST["jobTitle"]);
 	 $employeeId=$_POST["employeeId"];
 	 
 	 $payStart=$_POST["payStart"];
@@ -30,6 +30,22 @@
 	 $hourRate=$_POST["hourRate"];
 	 $checkNumber=$_POST["checkNumber"];
 	 $grossIncome=$_POST["grossIncome"];
+	 $deductionName1=ucwords($_POST["deductionName1"]);
+	 $deductionAmount1=$_POST["deductionAmount1"];
+	  $deductionName2=ucwords($_POST["deductionName2"]);
+	 $deductionAmount2=$_POST["deductionAmount2"];
+	  $deductionName3=ucwords($_POST["deductionName3"]);
+	 $deductionAmount3=$_POST["deductionAmount3"];
+	  $deductionName4=ucwords($_POST["deductionName4"]);
+	 $deductionAmount4=$_POST["deductionAmount4"];
+	  $deductionName5=ucwords($_POST["deductionName5"]);
+	 $deductionAmount5=$_POST["deductionAmount5"];
+	  $deductionName6=ucwords($_POST["deductionName6"]);
+	 $deductionAmount6=$_POST["deductionAmount6"];
+	 
+	 $netPay=ucwords($_POST["netPay"]);
+	 $netPayAmount=$_POST["netPayAmount"];
+	 
 	 
 	 
 }
@@ -252,11 +268,12 @@
 			<div class="innercontainer">
 				<div class="row secondRow">
 					<div class="col-sm-8 SalaryAmount">
-						Pay One Thousand Four Hundred Fifty One And Thirty Three Cents
+					    <?php echo $netPay ?>
 					</div>
 					<div class="col-sm-4 salarynumber">
 						<div class="amountcheck">
-							$ 							</div class="thisisnotcheque">This is not a check
+							$<?php echo number_format( $netPayAmount,2);?>						
+							</div class="thisisnotcheque">This is not a check
 						</div>
 					</div>
 				</div>
@@ -343,13 +360,13 @@
 							<tbody>
 								<tr class="spaceUpper">
 									<td width="16%" style="background-color:#e6e8ec; padding-left:14px;" >Regural Earning</td>
-									<td width="6%" style="text-align:center;"><?php echo $hourRate;?></td>
-									<td width="6%" style="text-align:center;"><?php echo $totalHour;?></td>
-									<td width="10%" style="text-align:center;"><?php echo $grossIncome;?></td>
+									<td width="6%" style="text-align:center;"><?php echo number_format( $hourRate,2);?></td>
+									<td width="6%" style="text-align:center;"><?php echo number_format($totalHour,2);?></td>
+									<td width="10%" style="text-align:center;"><?php echo number_format($grossIncome,2);?></td>
 									<td width="13%" style="text-align:center;"><?php echo number_format(12.00 * $grossIncome,2);?></td>
-									<td width="21%" style="background-color:#e6e8ec;">Federal</td>
-									<td width= "14%" style="text-align:center;">0.00</td>
-									<td width="14%" style="text-align:center;">0.00</td>
+									<td width="21%" style="background-color:#e6e8ec;"><?php echo $deductionName1;?></td>
+									<td width= "14%" style="text-align:center;"><?php echo number_format($deductionAmount1,2);?></td>
+									<td width="14%" style="text-align:center;"><?php echo number_format(12.00 * $deductionAmount1,2);?></td>
 								</tr>
 								<tr>
 									<td width="16%"style="background-color:#e6e8ec; padding-left:14px;"></td>
@@ -357,9 +374,9 @@
 									<td width="6%"></td>
 									<td width="10%"></td>
 									<td width="13%"></td>
-									<td width="21%" style="background-color:#e6e8ec">State</td>
-									<td width="14%" style="text-align:center;">0.00</td>
-									<td width="14%" style="text-align:center;">0.00</td>
+								    <td width="21%" style="background-color:#e6e8ec;"><?php echo $deductionName2;?></td>
+									<td width= "14%" style="text-align:center;"><?php echo number_format($deductionAmount2,2);?></td>
+									<td width="14%" style="text-align:center;"><?php echo number_format(12.00 * $deductionAmount2,2);?></td>
 								</tr>
 								<tr>
 								<tr>
@@ -368,9 +385,9 @@
 									<td width="6%"></td>
 									<td width="10%"></td>
 									<td width="13%"></td>
-									<td width="21%" style="background-color:#e6e8ec">Social Security</td>
-									<td width="14%" style="text-align:center;">0.00</td>
-									<td width="14%" style="text-align:center;">0.00</td>
+									<td width="21%" style="background-color:#e6e8ec;"><?php echo $deductionName3;?></td>
+									<td width= "14%" style="text-align:center;"><?php echo number_format($deductionAmount3,2);?></td>
+									<td width="14%" style="text-align:center;"><?php echo number_format(12.00 * $deductionAmount3,2);?></td>
 								</tr>
 								<tr>
 									<td width="16%"style="background-color:#e6e8ec; padding-left:14px;"></td>
@@ -378,9 +395,29 @@
 									<td width="6%"></td>
 									<td width="10%"></td>
 									<td width="13%"></td>
-									<td width="21%"style="background-color:#e6e8ec">Health Insurance Tax</td>
-									<td width="14%"style="text-align:center;"></td>
-									<td width="14%"style="text-align:center;">0.00</td>
+									<td width="21%" style="background-color:#e6e8ec;"><?php echo $deductionName4;?></td>
+									<td width= "14%" style="text-align:center;"><?php echo number_format($deductionAmount4,2);?></td>
+									<td width="14%" style="text-align:center;"><?php echo number_format(12.00 * $deductionAmount4,2);?></td>
+								</tr>
+								<tr>
+									<td width="16%"style="background-color:#e6e8ec; padding-left:14px;"></td>
+									<td width="6%"></td>
+									<td width="6%"></td>
+									<td width="10%"></td>
+									<td width="13%"></td>
+									<td width="21%" style="background-color:#e6e8ec;"><?php echo $deductionName5;?></td>
+									<td width= "14%" style="text-align:center;"><?php echo number_format($deductionAmount5,2);?></td>
+									<td width="14%" style="text-align:center;"><?php echo number_format(12.00 * $deductionAmount5,2);?></td>
+								</tr>
+								<tr>
+									<td width="16%"style="background-color:#e6e8ec; padding-left:14px;"></td>
+									<td width="6%"></td>
+									<td width="6%"></td>
+									<td width="10%"></td>
+									<td width="13%"></td>
+									<td width="21%" style="background-color:#e6e8ec;"><?php echo $deductionName6;?></td>
+									<td width= "14%" style="text-align:center;"><?php echo number_format($deductionAmount6,2);?></td>
+									<td width="14%" style="text-align:center;"><?php echo number_format(12.00 * $deductionAmount6,2);?></td>
 								</tr>
 							</tbody>
 					</div>
@@ -393,7 +430,7 @@
 									<th width="16%" style="padding-left:14px;">Gross Earning</th>
 									<th width="6%" style="text-align:center; background-color:#e6e8ec; color:white;"></th>
 									<th width="6%" style="text-align:center; background-color:#e6e8ec; color:white;"></th>
-									<th width="10%" style="text-align:center; background-color:#e6e8ec; color:black;"><?php echo $grossIncome;?></th>
+									<th width="10%" style="text-align:center; background-color:#e6e8ec; color:black;"><?php echo number_format($grossIncome,2);?></th>
 									<th width="13%" style="text-align:center; background-color:#e6e8ec; color:black;"><?php echo number_format(12.00 * $grossIncome,2);?></th>
 									<th width="21%">Gross Dedutctions</th>
 									<th width="14%"style="text-align:center; background-color:#e6e8ec; color:black;">0.00</th>
@@ -420,7 +457,7 @@
 							<thead>
 								<tr>
 									<th width="20%">Net Pay</th>
-									<th class="lastth" width="20%" style="background-color:#d5e2f8; text-align:center; color:black">$ </th>
+									<th class="lastth" width="20%" style="background-color:#d5e2f8; text-align:center; color:black">$<?php echo number_format( $netPayAmount,2);?></th>
 								</tr>
 							</thead>
 						</table>
@@ -432,7 +469,7 @@
 							<thead>
 								<tr>
 									<th width="20%">YTD Net Pay</th>
-									<th class="lastth" width="20%" style="background-color:#d5e2f8; text-align:center; color:black" >$ 0.00</th>
+									<th class="lastth" width="20%" style="background-color:#d5e2f8; text-align:center; color:black" >$<?php echo number_format( 12.00* $netPayAmount,2);?></th>
 								</tr>
 							</thead>
 						</table>

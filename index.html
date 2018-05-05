@@ -752,7 +752,7 @@
 								</div>
 
 								<div class="col-xs-3">
-									<input type="text" class="form-control" id="grossIncome" name="grossIncome" placeholder="Gross Income" />
+									<input type="text" class="form-control" id="grossIncome" name="grossIncome" placeholder="Gross Income" onkeyup="showHint()"/>
 								</div>
 
 							</div>
@@ -776,10 +776,10 @@
 							<div class="form-group">
 
 								<div class="col-xs-6">
-									<input type="text" class="form-control" name="deductionName" placeholder="ex. Income tax, union dues, life insurance, etc" />
+									<input type="text" class="form-control" name="deductionName1" placeholder="ex. Income tax, union dues, life insurance, etc" />
 								</div>
 								<div class="col-xs-3">
-									<input type="text" class="form-control" name="deductionAmount" placeholder="Deduction amount" onkeyup="showHint(this.value)"/>
+									<input type="text" class="form-control"  name="deductionAmount1" id="deductionAmount1" placeholder="Deduction amount" onkeyup="showHint()"/>
 								</div>
 							</div>
 							<div class="form-groupt">
@@ -790,13 +790,18 @@
 								</button>
 
 							</div>
-								<div class="form-group">
-
-								<div class="col-xs-6">
-									<input type="text" class="form-control" name="netPay" Value="Net Pay" />
+							<div class="form-group">
+							    <div class= "col-xs-3">
+							    <p id="alertMessage" style="background-color:Red; color:white;"></p>
+							    </div>
+							</div>
+                                 <div class="form-group">
+								<div class="col-xs-6" id="holder">
+								    <small id="label" for="input">Net Pay in Word</small>
+									<input type="text" class="form-control-input" name="netPay" Placeholder="Net Pay in Letter" />
 								</div>
 								<div class="col-xs-3">
-									<input type="text" class="form-control" id="netPayAmount" name="netPayAmount" placeholder="" />
+									<input type="text" class="form-control" id="netPayAmount" name="netPayAmount" placeholder="Net Pay Amount" />
 								</div>
 							</div>
 						</section>
