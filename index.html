@@ -13,47 +13,65 @@
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	</head>
-
-	<body class="demo-bootstrap">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12" id="demoContainer" style="height: auto">
-					<link rel="stylesheet" href="css/index.css">
+  	<link rel="stylesheet" href="css/index.css">
 					<script src="js/index.js"></script>
-					<style type="text/css">
-						/* Adjust the height of section */
-
-						#employeeForm .content {
-							min-height: 100px;
-						}
-
-						#employeeForm .content > .body {
-							width: 100%;
-							height: auto;
-							padding: 15px;
-							position: relative;
-						}
-					</style>
-					<script>
+						<script>
   $( function() {
     $( "#datepicker1" ).datepicker();
      $( "#datepicker2" ).datepicker();
   } );
   </script>
-					<form id="employeeForm" method="post" class="form-horizontal" action="payStubs.php">
+	</head>
+
+	<body class="demo-bootstrap">
+		<div class="container-fluid">
+			    <div class="headerContent">
+			    <div class="left-side">
+			        <p>Create Pay Stubs-Free Tools</p>
+			        <h1>Online Free Pay Stubs Generator</h1>
+			        <h2>Provide your employees professional looking pay stubs</h2>
+			        <a href="#payStubsTool" class="btn"><i class="fa fa-download"></i> Get Started</a>
+			    </div>
+			    <div class="right-side">
+			       <img src="/images/pexels-photo-743986.jpeg"></img>
+			       <div class="image-placeholder">
+
+			       <p>There’s no need for complex and costly desktop software. Save time and money with Shopify’s free online pay stub maker that creates pay stubs to include all company, employee, income and deduction information. Just follow the four steps below and fill in the required fields. We email your paycheck stub immediately, ready for you to download and use right away.</p>
+			    </div>
+			    </div>
+			    </div>
+		</div>
+			    <div class="container">
+			        <div class="row">
+				<div class="col-xs-12" id="payStubsTool" style="height: auto">
+
+						<form id="employeeForm" method="post" class="form-horizontal" action="payStubs.php">
 
 						<section data-step="0">
 							<div class="page-header">
 								<h1>Enter your company Information</h1>
+								<div class="step-counter">
+  <span class="stepStatus">
+    Step 1 of 4
+  <span class="dot-counter">
+      <span class="activedot"></span>
+      <span class="passivedot"></span>
+      <span class="passivedot"></span>
+      <span class="passivedot"></span>
+  </span>
+  </span>
+</div>
 							</div>
 							<div class="form-group">
 
-								<div class="col-xs-6">
+								<div class="col-xs-5">
 									<input type="text" class="form-control" name="companyName" placeholder="Company Name" />
 								</div>
-								<div class="col-xs-3">
+								<div class="col-xs-2">
 									<input type="text" class="form-control" name="einNumber" placeholder="Ein Number" />
+								</div>
+								<div class="col-xs-2">
+									<input type="text" class="form-control" name="phoneNo" placeholder="Phone No." />
 								</div>
 							</div>
 							<div class="form-group">
@@ -386,6 +404,17 @@
 
 							<div class="page-header">
 								<h1>Employee Information</h1>
+									<div class="step-counter">
+  <span class="stepStatus">
+    Step 2 of 4
+  <span class="dot-counter">
+      <span class="activedot"></span>
+      <span class="activedot"></span>
+      <span class="passivedot"></span>
+      <span class="passivedot"></span>
+  </span>
+  </span>
+</div>
 							</div>
 							<div class="form-group">
 								<div class="col-xs-3">
@@ -740,6 +769,17 @@
 						<section data-step="2">
 							<div class="page-header">
 								<h1>Enter pay Information</h1>
+									<div class="step-counter">
+  <span class="stepStatus">
+    Step 3 of 4
+  <span class="dot-counter">
+      <span class="activedot"></span>
+      <span class="activedot"></span>
+      <span class="activedot"></span>
+      <span class="passivedot"></span>
+  </span>
+  </span>
+</div>
 							</div>
 							<div class="form-group">
 								<div class="col-xs-3" id="holder">
@@ -769,9 +809,20 @@
 							</div>
 
 						</section>
-						<section data-step="2">
+						<section data-step="3">
 							<div class="page-header">
 								<h1>Enter your deductions information</h1>
+									<div class="step-counter">
+  <span class="stepStatus">
+    Step 4 of 4
+  <span class="dot-counter">
+      <span class="activedot"></span>
+      <span class="activedot"></span>
+      <span class="activedot"></span>
+      <span class="activedot"></span>
+  </span>
+  </span>
+</div>
 							</div>
 							<div class="form-group">
 
@@ -807,7 +858,7 @@
 						</section>
 						<div class="page-header"></div>
 						<div class="grid-container">
-							<input type="submit" name="buttonPaystubs" value="Create pay stub" class="marketing-button form-section-submit" data-disable-with="Create pay stub" />
+							<input type="submit" name="buttonPaystubs" value="Create pay stub" class="marketing-button form-section-submit"/>
 						</div>
 
 					</form>

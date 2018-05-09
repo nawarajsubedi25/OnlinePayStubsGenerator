@@ -17,9 +17,9 @@
     -moz-appearance: none;
     appearance: none;
 }
-input:focus{
-    border: 2px solid green;
-    background-color: #edf0f5;
+input[type=text]:focus{
+    border: 2px solid green!important;
+    background-color: #edf0f5!important;
 }
 
 #label {
@@ -63,43 +63,91 @@ input:focus{
      cursor:pointer;
 }
 .marketing-button {
-    -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
-    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
-    background-color: #5c6ac4;
-    color: #ffffff;
-    border-width: 0;
-    border-style: solid;
-    border-color: transparent;
-    display: inline-block;
-    padding: 1.0625em 1.875em;
-    border-width: 0;
-    border-style: solid;
-    border-color: transparent;
-    border-radius: 5px;
-    color: #ffffff;
-    font-family: ShopifySans, Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    font-size: 1em;
-    line-height: 1.133;
-    -webkit-font-smoothing: antialiased;
-    -webkit-transition: 150ms ease;
-    transition: 150ms ease;
-    -webkit-transition-property: background-color border-color color;
-    transition-property: background-color border-color color;
-    text-align: center;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    cursor: pointer;
+  padding: 10px 10px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  margin-bottom: 1em;
 }
-.marketing-button:hover {
-    background-color: #31366f;
+
+.marketing-button:hover {background-color: #3e8e41}
+
+.marketing-button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.btn {
+      background-color: #4CAF50;
+    border: none;
     color: white;
-      box-shadow: 0 0 11px rgba(33,33,33,.2); 
+    padding: 12px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+    background-color: #3e8e41;
+}
+.container-fluid{
+    margin-top: 4em;
+     background: #f4f6f8;
+}
+.headerContent{
+    margin-top: 3em;
+    margin-left: 5em;
+    overflow: hidden;
+    padding-bottom: 2em;
+}
+.left-side{
+    float:left;
+    width:50%;
+}
+.right-side{
+    float: right;
+    width:50%;
+    text-align: right;
+    
+}
+.image-placeholder {
+    background-color: #eee;
+    display: flex;
+    margin: 5px;
+}
+
+.image-placeholder > p {
+    align-self: center;
+    text-align: center;
+    width: 100%;
+    padding: 0.5em!important;
+}
+.stepStatus{
+    float: right;
+    margin-top: -1em!important;
+}
+.activedot{
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin: 0 0.125em;
+    border-radius: 50%;
+    background-color: #5c6ac4;
+}
+.passivedot{
+     width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin: 0 0.125em;
+    border-radius: 50%;
+    background-color: #dfe3e8;
+
 }
 @media screen and (min-width: 46.875em)
 {

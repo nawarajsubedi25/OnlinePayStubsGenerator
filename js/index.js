@@ -8,7 +8,7 @@ $(document).ready(function() {
         e.preventDefault();
         if(counter>5){
          	var summaryPanel = document.getElementById('alertMessage');
-				summaryPanel.innerHTML = "Only 5 deduction items allowed";
+				summaryPanel.innerHTML = "Only 6 deduction items allowed";
             return false;
      	}  
         if(counter < max_fields){ //max input box allowed

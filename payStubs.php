@@ -10,6 +10,7 @@
 	 $companyZipcode=$_POST["companyZipCode"];
 	 $companyCountryName=$_POST["companyCountryName"];
 	 $einNumber=$_POST["einNumber"];
+	 $phoneNumber=$_POST["phoneNo"];
 	 
 	 $firstName=ucwords($_POST["firstName"]);
 	 $lastName=ucwords($_POST["lastName"]);
@@ -42,7 +43,7 @@
 	 $deductionAmount5=$_POST["deductionAmount5"];
 	  $deductionName6=ucwords($_POST["deductionName6"]);
 	 $deductionAmount6=$_POST["deductionAmount6"];
-	 
+	 $totalDeduction=$deductionAmount1+$deductionAmount2+$deductionAmount3+$deductionAmount4+$deductionAmount5+$deductionAmount6;
 	 $netPay=ucwords($_POST["netPay"]);
 	 $netPayAmount=$_POST["netPayAmount"];
 	 
@@ -302,7 +303,7 @@
 							<br>
 								<?php echo $companyStreetAddress." ".$companyCityName.", ".$companyStateName." ".$companyZipcode." ".$companyCountryName;?>
 							<br>
-							PHONE:
+							PHONE: <?php echo $phoneNumber;?>
 							<br>
 							EIN:	<?php echo $einNumber;?>
 						</div>
@@ -365,8 +366,13 @@
 									<td width="10%" style="text-align:center;"><?php echo number_format($grossIncome,2);?></td>
 									<td width="13%" style="text-align:center;"><?php echo number_format(12.00 * $grossIncome,2);?></td>
 									<td width="21%" style="background-color:#e6e8ec;"><?php echo $deductionName1;?></td>
-									<td width= "14%" style="text-align:center;"><?php echo number_format($deductionAmount1,2);?></td>
-									<td width="14%" style="text-align:center;"><?php echo number_format(12.00 * $deductionAmount1,2);?></td>
+									<td width= "14%" style="text-align:center;"><?php if (!($deductionAmount1==null))
+									{echo number_format($deductionAmount1,2);
+									}
+									else{echo '&nbsp';}?></td>
+									<td width="14%" style="text-align:center;"><?php if (!($deductionAmount1==null))
+									{echo number_format(12.00 * $deductionAmount1,2);
+									}?></td>
 								</tr>
 								<tr>
 									<td width="16%"style="background-color:#e6e8ec; padding-left:14px;"></td>
@@ -375,8 +381,13 @@
 									<td width="10%"></td>
 									<td width="13%"></td>
 								    <td width="21%" style="background-color:#e6e8ec;"><?php echo $deductionName2;?></td>
-									<td width= "14%" style="text-align:center;"><?php echo number_format($deductionAmount2,2);?></td>
-									<td width="14%" style="text-align:center;"><?php echo number_format(12.00 * $deductionAmount2,2);?></td>
+									<td width= "14%" style="text-align:center;"><?php if (!($deductionAmount2==null))
+									{echo number_format($deductionAmount2,2);
+									}
+									else{echo '&nbsp';}?></td>
+									<td width="14%" style="text-align:center;"><?php if (!($deductionAmount2==null))
+									{echo number_format(12.00 * $deductionAmount2,2);
+									}?></td>
 								</tr>
 								<tr>
 								<tr>
@@ -386,8 +397,13 @@
 									<td width="10%"></td>
 									<td width="13%"></td>
 									<td width="21%" style="background-color:#e6e8ec;"><?php echo $deductionName3;?></td>
-									<td width= "14%" style="text-align:center;"><?php echo number_format($deductionAmount3,2);?></td>
-									<td width="14%" style="text-align:center;"><?php echo number_format(12.00 * $deductionAmount3,2);?></td>
+									<td width= "14%" style="text-align:center;"><?php if (!($deductionAmount3==null))
+									{echo number_format($deductionAmount3,2);
+									}
+									else{echo '&nbsp';}?></td>
+									<td width="14%" style="text-align:center;"><?php if (!($deductionAmount3==null))
+									{echo number_format(12.00 * $deductionAmount3,2);
+									}?></td>
 								</tr>
 								<tr>
 									<td width="16%"style="background-color:#e6e8ec; padding-left:14px;"></td>
@@ -396,8 +412,12 @@
 									<td width="10%"></td>
 									<td width="13%"></td>
 									<td width="21%" style="background-color:#e6e8ec;"><?php echo $deductionName4;?></td>
-									<td width= "14%" style="text-align:center;"><?php echo number_format($deductionAmount4,2);?></td>
-									<td width="14%" style="text-align:center;"><?php echo number_format(12.00 * $deductionAmount4,2);?></td>
+									<td width= "14%" style="text-align:center;"><?php if (!($deductionAmount4==null))
+									{echo number_format($deductionAmount4,2);
+									}else{echo '&nbsp';}?></td>
+									<td width="14%" style="text-align:center;"><?php if (!($deductionAmount4==null))
+									{echo number_format(12.00 * $deductionAmount4,2);
+									}?></td>
 								</tr>
 								<tr>
 									<td width="16%"style="background-color:#e6e8ec; padding-left:14px;"></td>
@@ -406,8 +426,13 @@
 									<td width="10%"></td>
 									<td width="13%"></td>
 									<td width="21%" style="background-color:#e6e8ec;"><?php echo $deductionName5;?></td>
-									<td width= "14%" style="text-align:center;"><?php echo number_format($deductionAmount5,2);?></td>
-									<td width="14%" style="text-align:center;"><?php echo number_format(12.00 * $deductionAmount5,2);?></td>
+									<td width= "14%" style="text-align:center;"><?php if (!($deductionAmount5==null))
+									{echo number_format($deductionAmount5,2);
+									}
+									else{echo '&nbsp';}?></td>
+									<td width="14%" style="text-align:center;"><?php if (!($deductionAmount5==null))
+									{echo number_format(12.00 * $deductionAmount5,2)
+									;}?></td>
 								</tr>
 								<tr>
 									<td width="16%"style="background-color:#e6e8ec; padding-left:14px;"></td>
@@ -416,8 +441,12 @@
 									<td width="10%"></td>
 									<td width="13%"></td>
 									<td width="21%" style="background-color:#e6e8ec;"><?php echo $deductionName6;?></td>
-									<td width= "14%" style="text-align:center;"><?php echo number_format($deductionAmount6,2);?></td>
-									<td width="14%" style="text-align:center;"><?php echo number_format(12.00 * $deductionAmount6,2);?></td>
+									<td width= "14%" style="text-align:center;"><?php if (!($deductionAmount6==null))
+									{echo number_format($deductionAmount6,2);
+									}
+									else{echo '&nbsp';}?></td>
+									<td width="14%" style="text-align:center;"><?php if (!($deductionAmount6==null))
+									{echo number_format(12.00 * $deductionAmount6,2);}?></td>
 								</tr>
 							</tbody>
 					</div>
@@ -433,8 +462,8 @@
 									<th width="10%" style="text-align:center; background-color:#e6e8ec; color:black;"><?php echo number_format($grossIncome,2);?></th>
 									<th width="13%" style="text-align:center; background-color:#e6e8ec; color:black;"><?php echo number_format(12.00 * $grossIncome,2);?></th>
 									<th width="21%">Gross Dedutctions</th>
-									<th width="14%"style="text-align:center; background-color:#e6e8ec; color:black;">0.00</th>
-									<th width="14%"style="text-align:center; background-color:#e6e8ec; color:black; ">0.00</th>
+									<th width="14%"style="text-align:center; background-color:#e6e8ec; color:black;"><?php echo number_format($totalDeduction,2);?></th>
+									<th width="14%"style="text-align:center; background-color:#e6e8ec; color:black; "><?php echo number_format(12.00 * $totalDeduction,2);?></th>
 								</tr>
 							</thead>
 					</div>
