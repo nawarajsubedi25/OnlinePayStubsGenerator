@@ -114,7 +114,9 @@ input[type=text]:focus{
     float: right;
     width:50%;
     text-align: right;
-    
+}
+.image-right-side{
+    margin-right: 3em;
 }
 .image-placeholder {
     background-color: #eee;
