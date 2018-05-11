@@ -151,6 +151,30 @@ input[type=text]:focus{
     background-color: #dfe3e8;
 
 }
+.glyphicon-ok-circle {
+     font-size: 30px;
+    line-height: 50px;
+    padding-top: 4px;
+    margin-right:4px;
+}
+
+.glyphicon-remove-circle {
+    font-size: 30px;
+    line-height: 50px;
+    padding-top: 4px;
+    margin-right:4px;
+}
+
+.glyphicon-refresh {
+     font-size: 30px;
+    line-height: 50px;
+    padding-top: 4px;
+    margin-right:4px;
+}
+.popover {
+    color: white;
+    background-color: red;
+}
 @media screen and (min-width: 46.875em)
 {
     .form-section-submit {
