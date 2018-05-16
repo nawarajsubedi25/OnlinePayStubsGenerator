@@ -175,6 +175,9 @@ input[type=text]:focus{
     color: white;
     background-color: red;
 }
+.image-placeholder p{
+    text-align:left;
+}
 @media screen and (min-width: 46.875em)
 {
     .form-section-submit {
