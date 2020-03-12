@@ -7,4 +7,4 @@ Simple web application which allows you to instantly create professional PayChec
 
 
 ### <h2 align="center">Create Your Pay Stubs </h2>
-To create your paystub, please click the link [Free Pay Stubs Generator](http://paystubsgenerator.co.nf "Free Pay Stubs Generator")
+To create your paystub, please click the link [Free Pay Stubs Generator](http://paystubsgenerator.c1.biz "Free Pay Stubs Generator")
